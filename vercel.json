@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/forms/route.js": {
+      "maxDuration": 30
+    }
+  }
+}
