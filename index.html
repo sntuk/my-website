@@ -1,86 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio — Heejin's Work</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - Please Fill This Up</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; text-align: center; margin-bottom: 5px; }
+        .subtitle { color: #666; text-align: center; margin-bottom: 30px; font-size: 0.9em; }
+        .section {
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .field { margin-bottom: 15px; }
+        .field label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        .field input, .field textarea, .field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .field input:focus, .field textarea:focus, .field select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+        .field textarea { resize: vertical; min-height: 100px; }
+        .radio-group { display: flex; gap: 20px; flex-wrap: wrap; }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .radio-group input[type="radio"] { width: auto; margin: 0; }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .submit-btn:hover { background-color: #0056b3; }
+        .section-divider { border: none; border-top: 2px solid #ddd; margin: 30px 0; }
+        .attachment-section {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fafafa;
+            transition: background 0.2s;
+        }
+        .attachment-section:hover { background-color: #f0f0f0; }
+        .attachment-section input[type="file"] { opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer; }
+        .files-container {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .files-container .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .files-container .file-item:last-child { border-bottom: none; }
+        @media (max-width: 600px) {
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+        .success-page {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .success-page h1 { color: #007bff; margin-bottom: 20px; }
+        .success-page p { color: #666; margin-bottom: 15px; }
+        .success-page a { color: #007bff; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="#works">Works</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="container">
+        <h1>Form</h1>
+        <p class="subtitle">Please fill up this form and send it back to me</p>
 
-  <main>
-    <section class="hero">
-      <h1>Hi, I'm Heejin</h1>
-      <p>Building clean, responsive websites and automating financial workflows.</p>
-      <a href="#works" class="btn">View My Work</a>
-    </section>
+        <form id="claimForm" method="POST" action="/submit" enctype="multipart/form-data">
+        <div class="section">
+            <h2 class="section-title">Uber Partner Details</h2>
+            <div class="field">
+                <label>Title</label>
+                <select name="title">
+                    <option value="Mr">Mr</option><option value="Mrs">Mrs</option><option value="Ms">Ms</option><option value="Dr">Dr</option><option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="first_name" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" name="last_name" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" required>
+            </div>
+            <div class="field">
+                <label>Telephone Name</label>
+                <input type="text" name="telephone" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" name="email" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Address</label>
+                <input type="text" name="address" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Postal Code</label>
+                <input type="text" name="postal_code" required placeholder="">
+            </div>
+        </div>
 
-    <section id="works" class="works">
-      <h2>Recent Work</h2>
-      <div class="works-grid">
-        <div class="work-card">
-          <h3>UK Tax Spreadsheet</h3>
-          <p>Self Assessment tax return workbook with auto-calculating formulas and 9-sheet structure.</p>
-          <a href="#">UK SA Tax Return</a>
-        </div>
-        <div class="work-card">
-          <h3>Voice Transcription</h3>
-          <p>Transcription pipeline: Whisper + Vosk with audio preprocessing for Bangla/English clips.</p>
-          <a href="#">View Transcription Pipeline</a>
-        </div>
-        <div class="work-card">
-          <h3>Excel Automation</h3>
-          <p>Reusable skills: Excel templates and audio transcription workflows for finance teams.</p>
-          <a href="#">Explore Skills</a>
-        </div>
-      </div>
-    </section>
+        <hr class="section-divider">
 
-    <section id="skills" class="skills">
-      <h2>Skills & Expertise</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <div class="skill-logo">📊</div>
-          <h4>Excel & Spreadsheets</h4>
-          <p>Finance templates, formulas, data workbooks</p>
+        <div class="section">
+            <h2 class="section-title">Bank Details</h2>
+            <div class="field">
+                <label>Bank account holder name</label>
+                <input type="text" name="account_holder" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Home address street name</label>
+                <input type="text" name="street" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Home address house/building number</label>
+                <input type="text" name="house_number" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Home address postal code</label>
+                <input type="text" name="postal_code" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Home address city</label>
+                <input type="text" name="city" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Bank account's IBAN</label>
+                <input type="text" name="iban" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Bank's SWIFT/BIC code</label>
+                <input type="text" name="swift" required placeholder="">
+            </div>
         </div>
-        <div class="skill-item">
-          <div class="skill-logo">🎙️</div>
-          <h4>Audio Transcription</h4>
-          <p>Whisper, Vosk, Bangla/English transcription</p>
-        </div>
-        <div class="skill-item">
-          <div class="skill-logo">💻</div>
-          <h4>Web Development</h4>
-          <p>HTML, CSS, JS, responsive design, deployment</p>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact" class="contact">
-      <h2>Get In Touch</h2>
-      <p>Have a project in mind? Let's talk.</p>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
-  </main>
+        <hr class="section-divider">
 
-  <footer>
-    <p>&copy; 2026 Heejin. Built with care.</p>
-  </footer>
+        <div class="section">
+            <h2 class="section-title">Uber Claim Details</h2>
+            <div class="field">
+                <label>Claim Type</label>
+                <select name="claim_type">
+                    <option value="Illness/Injury - Off App">Illness/Injury - Off App</option>
+                    <option value="Injury - Off App">Injury - Off App</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Created Date</label>
+                <input type="date" name="created_date" value="2026-10-19">
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section">
+            <h2 class="section-title">Medical Information</h2>
+            <div class="field">
+                <label>Have you been to a doctor?</label>
+                <div class="radio-group">
+                    <input type="radio" name="doctor_visit" value="Yes" required> Yes
+                    <input type="radio" name="doctor_visit" value="No"> No
+                </div>
+            </div>
+            <div class="field">
+                <label>Brief description of your symptoms</label>
+                <textarea name="symptoms" required placeholder=""></textarea>
+            </div>
+            <div class="field">
+                <label>What was the location when starting to feel sick?</label>
+                <input type="text" name="sick_location" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Your general practitioner's name</label>
+                <input type="text" name="gp_name" required placeholder="">
+            </div>
+            <div class="field">
+                <label>Your general practitioner's city</label>
+                <input type="text" name="gp_city" required placeholder="">
+            </div>
+            <div class="field">
+                <label>How many days were you unable to work?</label>
+                <input type="number" name="days_unable" required min="0" max="365" placeholder="">
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section">
+            <h2 class="section-title">Additional Files</h2>
+            <div class="attachment-section">
+                <input type="file" name="additional_files" accept=".pdf,.jpeg,.png,.doc,.docx,.mp4,.mov,.avi,image/*" multiple>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px;">
+                    <span style="font-size: 1.5em;">📁</span>
+                    <p>Click to browse or drag & drop files here</p>
+                </div>
+            </div>
+            <div class="files-container" id="files-list"></div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+        </form>
+    </div>
+
+    <div class="success-page hidden" id="successPage">
+        <h1>✅ Form Submitted!</h1>
+        <p>Thank you for your response.</p>
+        <p>We will review your submission and get back to you soon.</p>
+        <br>
+        <a href="/">Submit another form</a>
+    </div>
+
+    <script>
+        const fileInput = document.querySelector('input[type="file"][name="additional_files"]');
+        const filesList = document.getElementById('files-list');
+        const form = document.getElementById('claimForm');
+        const successPage = document.getElementById('successPage');
+
+        fileInput.addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                addFilesToList(files);
+            }
+        });
+
+        document.querySelector('.attachment-section').addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#007bff';
+        });
+
+        document.querySelector('.attachment-section').addEventListener('dragleave', function(e) {
+            this.style.borderColor = '#ddd';
+        });
+
+        document.querySelector('.attachment-section').addEventListener('drop', function(e) {
+            e.preventDefault();
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                addFilesToList(files);
+            }
+            this.style.borderColor = '#ddd';
+        });
+
+        function addFilesToList(files) {
+            filesList.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div style="flex:1; font-size:0.9em;">${file.name} (${formatFileSize(file.size)})</div>
+                    <button class="remove-file" onclick="removeFile(this)" style="background:#dc3545;color:white;border:none;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:0.8em;">×</button>
+                `;
+                filesList.appendChild(fileItem);
+            }
+            fileInput.click();
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' bytes';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        function removeFile(button) {
+            const item = button.closest('.file-item');
+            item.remove();
+        }
+
+        // Handle form submission - send to server
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect all form data
+            const formData = new FormData(form);
+            
+            // Add all files
+            const additionalFiles = form.querySelectorAll('input[type="file"][name="additional_files"]');
+            if (additionalFiles.length > 0) {
+                for (let file of additionalFiles[0].files) {
+                    formData.append('additional_files[]', file);
+                }
+            }
+            
+            // Send to server
+            fetch('/submit', {
+                method: 'POST',
+                body: formData
+            }).then(function(response) {
+                // Show success page
+                successPage.classList.remove('hidden');
+                form.style.display = 'none';
+            }).catch(function(error) {
+                alert('Error submitting form: ' + error.message);
+            });
+        });
+    </script>
 </body>
 </html>
