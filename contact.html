@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Taxd</title>
+    <meta name="description" content="Get in touch with Taxd for your self-employed tax return needs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-top">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+                            <rect width="40" height="40" rx="8" fill="#1a1a2e"/>
+                            <path d="M10 8 L20 18 L30 8" stroke="#e94560" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="20" cy="24" r="6" fill="#e94560"/>
+                            <circle cx="14" cy="28" r="2" fill="#fff" opacity="0.6"/>
+                            <circle cx="26" cy="28" r="2" fill="#fff" opacity="0.6"/>
+                        </svg>
+                        <span>Taxd</span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html" class="btn-nav active">Contact</a>
+                    </div>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="mobile-links">
+                        <a href="index.html">Home</a>
+                        <a href="services.html">Services</a>
+                        <a href="pricing.html">Pricing</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html" class="btn-nav mobile-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">Contact Us</span>
+                <h1>Get in Touch</h1>
+                <p>Have a question about your tax return or want to get started? We're here to help. Send us a message and we'll get back to you within one working day.</p>
+                <div class="hero-actions">
+                    <a href="index.html" class="btn btn-outline">Back to Home</a>
+                    <a href="#contact-form" class="btn btn-primary">Start Your Return</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact-form">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you shortly. For urgent queries, you can also email us at <strong>hello@taxireturn.co.uk</strong>.</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">📍</div>
+                            <h4>Visit Us</h4>
+                            <p>10 Downing Street<br>London SW1A 2AB</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">📞</div>
+                            <h4>Call Us</h4>
+                            <p>+44 20 7123 4567</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">📧</div>
+                            <h4>Email Us</h4>
+                            <p>hello@taxireturn.co.uk</p>
+                            <p>Response within 1 working day</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First Name *</label>
+                                <input type="text" id="first_name" name="first_name" required placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name *</label>
+                                <input type="text" id="last_name" name="last_name" required placeholder="Smith">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+44 7123 456789">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Which service do you need? *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="personal">Personal Tax Return (SA100)</option>
+                                <option value="mtd">Making Tax Digital Setup</option>
+                                <option value="company">Limited Company (CT600)</option>
+                                <option value="partnership">Partnership Tax Return (SA800)</option>
+                                <option value="landlord">Buy-to-Let / Rental Income</option>
+                                <option value="expat">Non-Resident UK Income</option>
+                                <option value="high-earner">High Earner / PAYE</option>
+                                <option value="advisory">Tax Advisory &amp; Planning</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Estimated Tax Bill (Optional)</label>
+                            <input type="text" id="budget" name="budget" placeholder="e.g. £2,500">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Situation *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Briefly describe your tax situation, income sources, and any questions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Submit My Tax Return</span>
+                            <span class="btn-spinner">
+                                <span class="spinner"></span>
+                                Sending...
+                            </span>
+                        </button>
+                        <p class="form-note">We typically respond within 1 working day. All data is encrypted and secure.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-summary">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Need Help Choosing?</h2>
+                    <p>Don't know which service you need? We'll help you figure it out.</p>
+                </div>
+                <div class="support-grid">
+                    <div class="support-option">
+                        <input type="radio" name="support-type" id="support-personal" value="personal">
+                        <label for="support-personal">
+                            <div class="option-icon">📄</div>
+                            <div class="option-text">
+                                <h4>Personal Tax Return</h4>
+                                <p>SA100 to SA110</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="support-option">
+                        <input type="radio" name="support-type" id="support-company" value="company">
+                        <label for="support-company">
+                            <div class="option-icon">🏢</div>
+                            <div class="option-text">
+                                <h4>Limited Company</h4>
+                                <p>CT600 &amp; SA100</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="support-option">
+                        <input type="radio" name="support-type" id="support-partnership" value="partnership">
+                        <label for="support-partnership">
+                            <div class="option-icon">👥</div>
+                            <div class="option-text">
+                                <h4>Partnership Returns</h4>
+                                <p>SA800 &amp; SA104</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="support-option">
+                        <input type="radio" name="support-type" id="support-mtd" value="mtd">
+                        <label for="support-mtd">
+                            <div class="option-icon">📱</div>
+                            <div class="option-text">
+                                <h4>Making Tax Digital</h4>
+                                <p>MTD software setup &amp; guidance</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+                    <rect width="40" height="40" rx="8" fill="#1a1a2e"/>
+                    <path d="M10 8 L20 18 L30 8" stroke="#e94560" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="20" cy="24" r="6" fill="#e94560"/>
+                    <circle cx="14" cy="28" r="2" fill="#fff" opacity="0.6"/>
+                    <circle cx="26" cy="28" r="2" fill="#fff" opacity="0.6"/>
+                </svg>
+                <span>Taxd</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Tax Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><a href="mailto:hello@taxireturn.co.uk">hello@taxireturn.co.uk</a></li>
+                        <li><a href="tel:+442071234567">+44 20 7123 4567</a></li>
+                        <li><a href="#">10 Downing Street, London SW1A 2AB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Taxd. All rights reserved.</p>
+                <p>Registered in England &amp; Wales • Company No. 13397852</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
