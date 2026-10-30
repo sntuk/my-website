@@ -1,0 +1,5 @@
+{
+  "framework": "other",
+  "buildCommand": "echo 'No build needed for static site'",
+  "outputDirectory": "."
+}

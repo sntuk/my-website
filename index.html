@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portsmouth Local AI Travel Guide</title>
+    <meta name="description" content="Your friendly local AI travel guide for Portsmouth. Discover hidden gems and historical sites with personalized itineraries.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-top">
+                    <div class="logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+                            <rect width="40" height="40" rx="8" fill="#1a1a2e"/>
+                            <path d="M10 8 L22 18 L8 28" stroke="#e94560" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="22" cy="23" r="5" fill="#e94560"/>
+                            <circle cx="15" cy="9" r="2" fill="#fff" opacity="0.6"/>
+                            <circle cx="29" cy="9" r="2" fill="#fff" opacity="0.6"/>
+                        </svg>
+                        <span>Portsmouth<span class="highlight">Guide</span></span>
+                    </div>
+                    <div class="nav-links">
+                        <a href="#chat" class="btn-nav active">AI Chat</a>
+                        <a href="#spots">Sights</a>
+                        <a href="#itineraries">Itineraries</a>
+                        <a href="#about">About</a>
+                        <a href="#contact" class="btn-nav">Contact</a>
+                    </div>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <div class="mobile-links">
+                        <a href="#chat" class="btn-nav active">AI Chat</a>
+                        <a href="#spots">Sights</a>
+                        <a href="#itineraries">Itineraries</a>
+                        <a href="#about">About</a>
+                        <a href="#contact" class="btn-nav mobile-btn">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">🤖 Your Personal Portsmouth AI Travel Guide</span>
+                <h1>Meet <span class="highlight">PortsmouthGuide</span></h1>
+                <p>I'm your friendly local AI expert. Tell me where you want to go, and I'll create a personalized tour just for you — focusing on history, hidden gems, and the best of Portsmouth.</p>
+                <div class="hero-actions">
+                    <a href="#chat" class="btn btn-primary">
+                        <span class="btn-icon">💬</span> Start Chatting
+                    </a>
+                    <a href="#itineraries" class="btn btn-outline">
+                        <span class="btn-icon">📋</span> View Sample Itineraries
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Historical sites</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Hidden gems</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Local expertise</span>
+                    </div>
+                </div>
+                <p class="hero-note">🕒 Open 24/7 · No bookings needed · Answer 2-3 questions for personalized recommendations</p>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section class="chat-section" id="chat">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Chat With Your <span class="highlight">Local Guide</span></h2>
+                    <p>Tell me about your trip and I'll build a custom itinerary. No jargon, just friendly advice.</p>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="msg bot">
+                            <div class="msg-avatar">🇬🇧</div>
+                            <div class="msg-content">
+                                <p>Hi there! 👋 I'm your Portsmouth local guide. I'd love to help you plan an amazing day or weekend.</p>
+                                <p>Just tell me: <strong>Where are you staying?</strong>, <strong>How many days do you have?</strong>, and <strong>What interests you most?</strong> (history, food, hidden gems, families, etc.)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <form id="chatForm">
+                            <div class="input-wrapper">
+                                <input type="text" id="chatInput" placeholder="Type your question about Portsmouth..." autocomplete="off">
+                                <button type="submit" class="btn-send">
+                                    <span class="btn-icon">🚀</span>
+                                </button>
+                            </div>
+                            <div class="input-hints">
+                                <span>Try asking:</span><br>
+                                <span class="hint">What days should I visit the Historic Dockyard?</span><br>
+                                <span class="hint">I have 2 days - what should I see?</span><br>
+                                <span class="hint">Hidden gems in Old Portsmouth?</span><br>
+                                <span class="hint">Family-friendly activities near the beach</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sights Section -->
+        <section class="sights" id="spots">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Historical <span class="highlight">Sights</span></h2>
+                    <p>Must-see places in Portsmouth, from ancient dockyards to hidden courtyards.</p>
+                </div>
+                <div class="sights-grid">
+                    <div class="sight-card">
+                        <div class="sight-icon">⚓</div>
+                        <h3>Historic Dockyard</h3>
+                        <p>England's seafaring story comes alive at this world-famous complex. HMS Warrior, Mary Rose, and more.</p>
+                        <span class="sight-type">⭐ Must-see</span>
+                    </div>
+                    <div class="sight-card">
+                        <div class="sight-icon">🏰</div>
+                        <h3>Old Portsmouth Castle</h3>
+                        <p>11th century fortress with panoramic views. Walk the ramparts and step back in time.</p>
+                        <span class="sight-type">📍 Historic</span>
+                    </div>
+                    <div class="sight-card">
+                        <div class="sight-icon">🐬</div>
+                        <h3>Gunnery Park</h3>
+                        <p>Seafront park with gorgeous views, museum, and the Gibraltar Battery underground.</p>
+                        <span class="sight-type">🌿 Relax</span>
+                    </div>
+                    <div class="sight-card">
+                        <div class="sight-icon">🎭</div>
+                        <h3>King Richard's Castle</h3>
+                        <p>Medieval keep with panoramic city views. Great photo spot and history lesson.</p>
+                        <span class="sight-type">📸 Photo</span>
+                    </div>
+                    <div class="sight-card">
+                        <div class="sight-icon">🌉</div>
+                        <h3>Boltheram Bridge</h3>
+                        <p>Iconic suspension bridge offering stunning views of the Solent and Isle of Wight.</p>
+                        <span class="sight-type">🌉 Iconic</span>
+                    </div>
+                    <div class="sight-card">
+                        <div class="sight-icon">🍕</div>
+                        <h3>The Point</li>
+                        <p>Last great working fishing port. Watch the boats, eat fresh seafood.</p>
+                        <span class="sight-type">🍽️ Food</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itineraries Section -->
+        <section class="itineraries" id="itineraries">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Sample <span class="highlight">Itineraries</span></h2>
+                    <p>Pre-made plans you can adapt to your trip. Tell me your preferences for a custom one!</p>
+                </div>
+                <div class="itinerary-grid">
+                    <div class="itinerary-card">
+                        <h3>📅 1-Day Express</h3>
+                        <p>6 AM to 9 PM</p>
+                        <ul>
+                            <li>6:00 AM: Breakfast at The Point</li>
+                            <li>8:30 AM: Historic Dockyard</li>
+                            <li>12:30 PM: Lunch &medspace; around the harbour</li>
+                            <li>2:00 PM: King Richard's Castle</li>
+                            <li>4:30 PM: Old Portsmouth Castle</li>
+                            <li>7:00 PM: Dinner in Gunwharf Quays</li>
+                            <li>9:00 PM: Sunset at the Solent</li>
+                        </ul>
+                        <button class="btn btn-outline">Customize This</button>
+                    </div>
+                    <div class="itinerary-card">
+                        <h3>📅 3-Day Deep Dive</h3>
+                        <p>Perfect for history buffs</p>
+                        <ul>
+                            <li>Day 1: Dockyard, Warrior, Mary Rose</li>
+                            <li>Day 2: Old Portsmouth, Spy Museum, Breech Battery</li>
+                            <li>Day 3: Southsea, Crystal Palace, Hidden Gardens</li>
+                        </ul>
+                        <button class="btn btn-outline">Customize This</button>
+                    </div>
+                    <div class="itinerary-card">
+                        <h3>📅 6-Day Family Adventure</h3>
+                        <p>Fun for all ages</p>
+                        <ul>
+                            <li>Day 1: Dockyard, Whale Watching</li>
+                            <li>Day 2: Gunwharf Quays, Pompey Pirates</li>
+                            <li>Day 3: Secret Harbour Walks</li>
+                            <li>Day 4: Coastal walks, beach day</li>
+                            <li>Day 5: Explores &amp; Discovery</li>
+                            <li>Day 6: Farewell Solent sunset</li>
+                            <li>Day 7: Departure</li>
+                        </ul>
+                        <button class="btn btn-outline">Customize This</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Your <span class="highlight">AI Guide</span></h2>
+                    <p>I'm an AI trained on Portsmouth's history, culture, and local knowledge. I don't replace a real guide — I'm here to help you plan faster so you can enjoy more of the city.</p>
+                    <p>My knowledge comes from:</p>
+                    <ul>
+                        <li>Local historians and guides</li>
+                        <li>Visitor feedback and reviews</li>
+                        <li>City council resources</li>
+                        <li>Travel blogs and forums</li>
+                    </ul>
+                    <p class="note">💡 <strong>Always verify opening times before visiting</strong> — they change seasonally and by event.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+                    <rect width="40" height="40" rx="8" fill="#1a1a2e"/>
+                    <path d="M10 8 L22 18 L8 28" stroke="#e94560" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="22" cy="23" r="5" fill="#e94560"/>
+                    <circle cx="15" cy="9" r="2" fill="#fff" opacity="0.6"/>
+                    <circle cx="29" cy="9" r="2" fill="#fff" opacity="0.6"/>
+                </svg>
+                <span>Portsmouth<span class="highlight">Guide</span></span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Visit</h4>
+                    <ul>
+                        <li><a href="#chat">AI Chat</a></li>
+                        <li><a href="#spots">Top Sights</a></li>
+                        <li><a href="#itineraries">Itineraries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@portsmouthguide.com">hello@portsmouthguide.com</a></li>
+                        <li><a href="tel:+442071234567">+44 20 7123 4567</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Portsmouth Guide. All rights reserved.</p>
+                <p>Open source AI travel assistant built with 🤖 + ☕ + 🇬🇧</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
